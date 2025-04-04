@@ -1,12 +1,11 @@
-<?php require "assets/function.php" ?>
+<?php require "include/function.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Login</title>
 	<?php require "assets/autoloader.php" ?>
 	<style type="text/css">
-	<?php include 'css/customStyle.css'; ?>
-	
+	<?php include 'css/customStyle.css' ?>
 	</style>
 </head>
 <body style="background: url('photo/login.jpg');background-size: 100%">
@@ -45,7 +44,7 @@ if (isset($_POST['login']))
 {
 	$user = $_POST['email'];
     $pass = $_POST['password'];
-    $con = new mysqli('localhost','root','','store');
+    $con = new mysqli('localhost','root','','medical_store');
 
     $result = $con->query("select * from users where email='$user' AND password='$pass'");
     if($result->num_rows>0)

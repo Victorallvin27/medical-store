@@ -6,7 +6,7 @@ if(!isset($_SESSION['userId']))
   header('location:login.php');
 }
  ?>
-<?php require "assets/function.php" ?>
+<?php require "include/function.php" ?>
 <?php require 'assets/db.php';?>
 <!DOCTYPE html>
 <html>
