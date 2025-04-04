@@ -1,5 +1,5 @@
 <?php 
-    $con = new mysqli('localhost','root','','medstore');
+    $con = new mysqli('localhost','root','','medical-store');
 //for user informationa making available for all pages
 
     $array = $con->query("select * from users where id ='$_SESSION[userId]'");
