@@ -1,5 +1,5 @@
 <?php 
-   $schema='medical-store';
+   $schema='medicalStore';
    $con = new mysqli('localhost','root','',$schema);
 //for user informationa making available for all pages
 
