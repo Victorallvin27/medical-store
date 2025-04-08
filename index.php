@@ -3,18 +3,18 @@ session_start();
 
 if(!isset($_SESSION['userId']))
 {
-  header('location:login.php');
+  header('13.202.48.4:login.php');
 }
  ?>
 <?php require "include/function.php" ?>
-<?php require 'assets/db.php';?>
+<?php require 'assets/db.php'?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title><?php echo siteTitle(); ?></title>
+  <title><?php echo siteTitle() ?></title>
   <?php require "assets/autoloader.php" ?>
   <style type="text/css">
-  <?php include 'css/customStyle.css'; ?>
+  <?php include 'css/customStyle.css' ?>
 
   </style>
   <?php 
