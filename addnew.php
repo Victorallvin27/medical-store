@@ -24,7 +24,7 @@ if(!isset($_SESSION['userId']))
     $filename = $_FILES['inPic']['name'];
     move_uploaded_file($_FILES["inPic"]["tmp_name"], "photo/".$_FILES["inPic"]["name"]);
     $userId = $_SESSION['userId'];
-    if ($con->query("insert into categories (name,pic,user_id) value ('$_POST[name]','$filename','userId')")) {
+    if ($con->query("insert into categories (name,pic,user_id) value ('$_POST[name]','$filename','$userId')")) {
       $notice ="<div class='alert alert-success'>Successfully Saved</div>";
     }
     else
@@ -87,7 +87,8 @@ if(!isset($_SESSION['userId']))
 </div>
 <?php 
 if (isset($_POST['saveProduct'])) {
-if ($con->query("insert into inventeries (catId,supplier,name,unit,price,description,company,user_id) values ('$_POST[catId]','$_POST[supplier]','$_POST[name]','$_POST[unit]','$_POST[price]','$_POST[discription]','$_POST[company]','userId')")) {
+  $userId = $_SESSION['userId'];
+if ($con->query("insert into inventeries (catId,supplier,name,unit,price,description,company,user_id) values ('$_POST[catId]','$_POST[supplier]','$_POST[name]','$_POST[unit]','$_POST[price]','$_POST[discription]','$_POST[company]','$userId')")) {
   $notice ="<div class='alert alert-success'>Successfully Saved</div>";
 }
 else{
