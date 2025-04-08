@@ -265,7 +265,7 @@ ALTER TABLE `supplier`
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
-ALTER TABLE inventories ADD COLUMN user_id INT;
+ALTER TABLE inventeries ADD COLUMN user_id INT;
 ALTER TABLE categories ADD COLUMN user_id INT;
 ALTER TABLE supplier ADD COLUMN user_id INT;
 ALTER TABLE sold ADD COLUMN user_id INT;
