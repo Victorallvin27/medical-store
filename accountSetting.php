@@ -7,7 +7,7 @@ if(!isset($_SESSION['userId']))
 }
  ?>
 <?php require "include/function.php" ?>
-<?php require 'assets/db.php';?>
+<?php require 'assets/db.php'?>
 <!DOCTYPE html>
 <html>
 <head>
