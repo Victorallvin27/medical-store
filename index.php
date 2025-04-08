@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['userId']))
 {
-  header('13.202.48.4:login.php');
+  header('location:login.php');
 }
  ?>
 <?php require "include/function.php" ?>
@@ -23,7 +23,8 @@ if(!isset($_SESSION['userId']))
   {
     $filename = $_FILES['inPic']['name'];
     move_uploaded_file($_FILES["inPic"]["tmp_name"], "photo/".$_FILES["inPic"]["name"]);
-    if ($con->query("insert into categories (name,pic) value ('$_POST[name]','$filename')")) {
+    $userId = $_SESSION['userId'];
+    if ($con->query("insert into categories (name,pic,user_id) value ('$_POST[name]','$filename','userId')")) {
       $notice ="<div class='alert alert-success'>Successfully Saved</div>";
     }
     else
@@ -95,7 +96,8 @@ if(!isset($_SESSION['userId']))
     </div>
 
   <?php 
-    $array = $con->query("select * from categories");
+    $userId = $_SESSION['userId'];
+    $array = $con->query("select * from categories where user_id='userId'");
     while ($row = $array->fetch_assoc()) 
     {
       $array2 = $con->query("select count(*) from inventeries where catId = '$row[id]'");
@@ -134,8 +136,7 @@ if(!isset($_SESSION['userId']))
             <label for="2" class="col-form-label">Picture</label>
             <input type="file" name="inPic" class="form-control" id="2" required>
           </div>
-          
-       
+        
         </div>
         
       </div>
