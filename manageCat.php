@@ -23,7 +23,8 @@ if(!isset($_SESSION['userId']))
   {
     $filename = $_FILES['inPic']['name'];
     move_uploaded_file($_FILES["inPic"]["tmp_name"], "photo/".$_FILES["inPic"]["name"]);
-    if ($con->query("insert into categories (name,pic) value ('$_POST[inName]','$filename')")) {
+    $userId = $_SESSION['userId'];
+    if ($con->query("insert into categories (name,pic,user_id) value ('$_POST[inName]','$filename','userId')")) {
       $notice ="<div class='alert alert-success'>Successfully Saved</div>";
     }
     else
