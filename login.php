@@ -45,8 +45,7 @@ if (isset($_POST['login']))
 	$user = $_POST['email'];
     $pass = $_POST['password'];
     $con = new mysqli('database-1.cxk846iyaaig.ap-south-1.rds.amazonaws.com','admin','rdsConnect','medicalStore',3309);
-    $userId = $_SESSION['userId'];
-    $result = $con->query("select * from users where email='$user' AND password='$pass'and user_id='$userId'");
+    $result = $con->query("select * from users where email='$user' AND password='$pass'");
     if($result->num_rows>0)
     {	
     	session_start();
