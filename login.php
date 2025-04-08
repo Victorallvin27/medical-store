@@ -44,7 +44,7 @@ if (isset($_POST['login']))
 {
 	$user = $_POST['email'];
     $pass = $_POST['password'];
-    $con = new mysqli('localhost','root','','medical_store');
+    $con = new mysqli('13.202.48.4','admin','rdsConnect','medicalStore',3309);
 
     $result = $con->query("select * from users where email='$user' AND password='$pass'");
     if($result->num_rows>0)
