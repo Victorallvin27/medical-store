@@ -78,18 +78,15 @@ if(!isset($_SESSION['userId']))
 if (isset($_GET['catId']))
 {
   $catId = $_GET['catId'];
-  $userId = $_SESSION['userId'];
-  $array = $con->query("select * from categories where id='$catId' where user_id='$userId'");
+  $array = $con->query("select * from categories where id='$catId'");
   $catArray =$array->fetch_assoc();
   $catName = $catArray['name'];
   $stockArray = $con->query("select * from inventeries where catId='$catArray[id]'");
- 
 }
 else
 {
   $catName = "All Inventeries";
-  $userId = $_SESSION['userId'];
-  $stockArray = $con->query("select * from inventeries where user_id='$userId'");
+  $stockArray = $con->query("select * from inventeries");
 }
   include 'assets/bill.php';
  ?>
