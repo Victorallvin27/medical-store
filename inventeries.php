@@ -87,7 +87,7 @@ if (isset($_GET['catId']))
 else
 {
   $catName = "All Inventeries";
-  $stockArray = $con->query("select * from inventeries");
+  $stockArray = $con->query("select * from inventeries where user_id='userId'");
 }
   include 'assets/bill.php';
  ?>
