@@ -7,8 +7,7 @@ if (isset($_REQUEST['q']))
 	if ($_REQUEST['q'] == 'addtobill') 
 	{
 		$id = $_REQUEST['id'];
-		$userId = $_SESSION['userId'];
-		$array = $con->query("select * from inventeries where id = '$id'and user_id='$userId'");
+		$array = $con->query("select * from inventeries where id = '$id'");
     	$row = $array->fetch_assoc();
 		$name = $row['name'];
 		$price = $row['price'];
