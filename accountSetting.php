@@ -14,7 +14,7 @@ if(!isset($_SESSION['userId']))
   <title><?php echo siteTitle(); ?></title>
   <?php require "assets/autoloader.php" ?>
   <style type="text/css">
-  <?php include 'css/customStyle.css'; ?>
+  <?php include 'css/customStyle.css' ?>
 
   </style>
  <?php 
