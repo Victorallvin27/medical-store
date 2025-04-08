@@ -20,8 +20,7 @@ if(!isset($_SESSION['userId']))
  <?php 
  $notice="";
 if (isset($_POST['saveSetting'])) {
-  $userId = $_SESSION['userId'];
-if ($con->query("update site SET title='$_POST[title]',name='$_POST[name]'where user_id='$userId'")) {
+if ($con->query("update site SET title='$_POST[title]',name='$_POST[name]'")) {
   $notice ="<div class='alert alert-success'>Successfully Saved</div>";
 }
 else{
